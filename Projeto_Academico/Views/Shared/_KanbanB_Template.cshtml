@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="Personal Kanban Board">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <script src="https://use.fontawesome.com/99347ac47f.js"></script>
+    <!-- Font Icons CSS-->
+    <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
+    <script src="https://use.fontawesome.com/b21475ed2e.js"></script>
+
+
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    @Styles.Render("~/Content/kanban")
+    @*<link rel="stylesheet" href="~/Content/adminTheme/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/kanban/bootstrap.min.css">*@
+    @Scripts.Render("~/bundles/bundles/jqueryui")
+
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+    <script type="text/javascript">
+        window.alert = function () { };
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css) {
+            if (css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="' + css + '" type="text/css" />');
+            else $('head > link').filter(':first').replaceWith(defaultCSS);
+        }
+        $(document).ready(function () {
+            var iframe_height = parseInt($('html').height());
+            window.parent.postMessage(iframe_height, 'http://localhost:1356');
+        });
+    </script>
+
+    <title>@ViewBag.Title - Projeto Acadêmico</title>
+</head>
+<body>
+    <header></header>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    <!-- Static Modal -->
+    <div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-refresh fa-5x fa-spin"></i>
+                        <h4>Processando...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>-->
+
+    @Scripts.Render("~/bundles/jqueryui")
+
+    @*@Scripts.Render("~/bundles/kanban")*@
+    <script type="text/javascript">
+        $(function () {
+            var kanbanCol = $('.panel-body');
+            kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
+
+            var kanbanColCount = parseInt(kanbanCol.length);
+            $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
+
+            draggableInit();
+
+            $('.panel-heading').click(function () {
+                var $panelBody = $(this).parent().children('.panel-body');
+                $panelBody.slideToggle();
+            });
+        });
+
+        function draggableInit() {
+            var sourceId;
+
+            $('[draggable=true]').bind('dragstart', function (event) {
+                sourceId = $(this).parent().attr('id');
+                event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
+            });
+
+            $('.panel-body').bind('dragover', function (event) {
+                event.preventDefault();
+            });
+
+            $('.panel-body').bind('drop', function (event) {
+                var children = $(this).children();
+                var targetId = children.attr('id');
+
+                if (sourceId != targetId) {
+                    var elementId = event.originalEvent.dataTransfer.getData("text/plain");
+
+                    var ProcessoID = targetId;
+                    var Id = elementId;
+
+                    var objetoTarefa = {
+                        Id: Id,
+                        ProcessoID: targetId
+                    };
+                    var url = "/Painel/AlterarProcesso";
+                    var dataJson = JSON.stringify(objetoTarefa);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: { modelo: dataJson },
+                        dataType: 'json',
+                        success: function (data) {
+                        }
+                    });
+
+                    $('#processing-modal').modal('toggle'); //before post
+
+
+                    // Post data
+                    setTimeout(function () {
+                        var element = document.getElementById(elementId);
+                        children.prepend(element);
+                        $('#processing-modal').modal('toggle'); // after post
+                    }, 1000);
+
+                }
+
+                event.preventDefault();
+            });
+        }
+
+    </script>
+
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

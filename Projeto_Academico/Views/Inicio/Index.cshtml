@@ -1,0 +1,91 @@
+﻿@model Projeto_Academico.Models.ViewModels.InicioViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Inicio";
+}
+
+
+<section class="bg-primary" id="inicio">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h2 class="section-heading">Tudo o que você precisa para um projeto bem estruturado</h2>
+            <hr class="light">
+            <p class="text-faded">Comece agora a gerenciar seus projetos de forma bem mais simples, organizada e dinâmica utilizando o nosso gerenciador de projetos</p>
+        </div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+            @*<button type="submit" class="btn btn-success">Registrar</button>*@
+            <a href="@Url.Action("Cadastro", "Inicio")" class="btn btn-default">Registrar</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-9 text-center"></div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-9 text-center">
+            <p class="text-faded">Já possui nossos serviços? Então acesse direto!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-9 text-center">
+            <a href="@Url.Action("Index", "Login")" class="btn btn-default">Login</a>
+            @*<a href="@Url.Action("Cadastro_Inicial", "Inicio")" class="btn btn-success">Registrar</a>*@
+        </div>
+    </div>
+
+</section>
+
+<section id="sobre">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Por que usar o e-Project ?</h2>
+            <hr class="primary">
+        </div>
+    </div>
+    <div class="text-center">
+        <div class="row">
+            <div class="service-box">
+                <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                <h3>Mais organização e transparência</h3>
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-muted"> Seus projetos são colocados de forma mais organizada limpa e transparente possivel.</p>
+        </div>
+    </div>
+
+
+
+    <!--<div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                    <h3>Sturdy Templates</h3>
+                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                    <h3>Ready to Ship</h3>
+                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                    <h3>Up to Date</h3>
+                    <p class="text-muted">We update dependencies to keep things fresh.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+                    <h3>Made with Love</h3>
+                    <p class="text-muted">You have to make your websites with love these days!</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</section>

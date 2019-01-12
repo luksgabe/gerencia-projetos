@@ -1,0 +1,42 @@
+﻿<nav class="side-navbar">
+    <!-- Sidebar Header-->
+    <div class="sidebar-header d-flex align-items-center">
+        <div class="avatar"><img src="@ViewBag.imgPerfil" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="title">
+            <h1 class="h4">@ViewBag.UserName</h1>
+            <p>@ViewBag.Cargo</p>
+        </div>
+    </div>
+    <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+    <ul class="list-unstyled">
+        <li>
+            <a href="@Url.Action("Index", "Home")"><i class="icon-home"></i>Home</a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Painel")"><i class="icon-padnote"></i>Projetos </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Controle")"><i class="icon-flask"></i>Painel de Controle</a>
+        </li>
+    </ul><span class="heading">Meus Projetos</span>
+    <ul class="list-unstyled">
+        @foreach (var item in ViewBag.ListaProjetos as ICollection<Projeto_Academico.Models.Projeto>)
+        {
+            <li>
+                <strong class="container"> -@item.cliente.nome</strong>
+                <ul>
+                    <li> <a href="@Url.Action("Projeto", "Painel", new { id = item.id })"> <i class="icon-screen"></i>@item.nome </a></li>
+                </ul>
+            </li>
+        }
+    </ul>
+</nav>
+
+@section Scripts {
+    <script type="text/javascript">
+        var url = "/Base/DataHoraAtual";
+        $.get(url, null, function (data) {
+            $("#rData").html(data);
+        });
+    </script>
+}

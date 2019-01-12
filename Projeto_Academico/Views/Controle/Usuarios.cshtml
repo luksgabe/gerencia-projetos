@@ -1,0 +1,69 @@
+﻿@using Projeto_Academico.ViewModels
+@model  UsuariosViewModel
+@{
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.Title = "Controle Usuarios";
+    ViewBag.PageTitle = "Controle Usuarios";
+    ViewBag.IconPage = "fa fa-users";
+}
+
+<style>
+    .card {
+        width: 1200px;
+    }
+
+        .card th, td {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+</style>
+
+
+
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Controle")">Painel de Controle</a></li>
+        <li class="breadcrumb-item active">@ViewBag.PageTitle</li>
+    </div>
+</ul>
+
+<section class="tables">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Tabelas de usuarios</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-usuarios">
+                        <thead>
+                            <tr>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Id)</th>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Nome)</th>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Apelido)</th>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Cargo)</th>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Email)</th>
+                                <th align="center" class="text-center">@Html.DisplayNameFor(model => model.Ativo)</th>
+                                <th align="center" class="text-center">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var usuario in Model.listaUsuario)
+                            {
+                                <tr>
+                                    <th class="text-center" scope="row">@usuario.id</th>
+                                    <td class="text-center">@Html.DisplayFor(modelItem => usuario.nome)</td>
+                                    <td class="text-center">@Html.DisplayFor(modelItem => usuario.apelido)</td>
+                                    <td class="text-center">@Html.DisplayFor(modelItem => usuario.cargo)</td>
+                                    <td class="text-center">@Html.DisplayFor(modelItem => usuario.email)</td>
+                                    <td class="text-center">@Html.DisplayFor(modelItem => usuario.ativo)</td>
+                                    <td class="text-center"><a href="@Url.Action("UsuarioEdicao", "Controle", new { id = usuario.id })" class="btn btn-danger">Editar</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

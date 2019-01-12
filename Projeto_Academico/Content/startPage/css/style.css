@@ -1,0 +1,40 @@
+aside{
+	float: right !important;
+}
+
+.panel-right {
+	border: 2px solid #000;
+	height: 650px;
+	max-height: 100%;
+}
+
+.navbar-nav li{
+	color: #333 !important;
+}
+
+/*.header-content-inner h1{
+	color: #000 !important;
+}*/
+
+.titulo-faxada {
+	color: #fff;
+}
+
+
+#contato {
+	color: #fff;
+}
+
+@media (max-width: 340px) {
+
+.navbar-default .navbar-header .navbar-toggle {
+    width: 20%;
+}
+
+
+.navbar-default .navbar-header .navbar-brand {
+    width: 70%;
+}
+
+
+}

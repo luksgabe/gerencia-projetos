@@ -1,0 +1,304 @@
+﻿@model Projeto_Academico.ViewModels.ProjetoViewModel
+@{
+    ViewBag.PageTitle = "Lista de tarefas";
+    ViewBag.Title = "Gestão de Projetos";
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.IconPage = "icon-interface-windows";
+}
+
+<style>
+    .row {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+
+    .panel-heading span {
+        margin-top: -20px;
+        font-size: 15px;
+    }
+
+    .card-header a {
+        color: dimgrey;
+    }
+
+    label {
+        display: inline;
+    }
+
+    .tasks {
+        font-size: small;
+    }
+
+        .tasks a {
+            text-decoration: none;
+            color: black;
+        }
+
+            .tasks a:hover {
+                color: darkgray;
+            }
+
+    .breadcrumb button {
+        border-radius: 5px;
+        color: #000000;
+    }
+
+        .breadcrumb button:hover {
+            border: black;
+            border-radius: 5px;
+            color: #fff;
+            background-color: black;
+        }
+</style>
+
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item active">@Html.ActionLink("Painel de Projetos", "Index", "Painel")</li>
+        <li class="breadcrumb-item">@ViewBag.NomeProjeto</li>
+    </div>
+    @if (Model.Tipo.Equals(1))
+    {
+        <div class="offset-lg-8 offset-md-9" style="display: inline;">
+            <a href="@Url.Action("KanbanBoard", "Painel")"><button class="btn--primary"><i class="fa fa-tachometer" aria-hidden="true"></i></button></a>
+        </div>
+    }
+</ul>
+
+@if (Model.Tipo.Equals(1))
+{
+    <section id="painel">
+        <div class="large-12 columns offset-lg-9 offset-md-9">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#novaFila"><i class="fa fa-plus" aria-hidden="true"></i>Nova Fila de Tarefas</button>
+        </div>
+        <div class="large-12 columns offset-lg-11 offset-md-11" style="float: left;">
+
+        </div>
+    </section>
+}
+
+<!--Fila tarefas-->
+<section id="tarefas">
+    <div class="container">
+        @foreach (var item in ViewBag.ListFilas as ICollection<Projeto_Academico.Models.Fila>)
+        {
+            <div class="row">
+                <div id="accordion" class="col-lg-12" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@item.id" aria-expanded="true" aria-controls="collapse-@item.id">
+                                    @item.nome
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-@item.id" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                                <div class="col-lg-offset-12">
+                                    <div class="tasks">
+                                        @foreach (var task in Model.ListaTarefa(item.id))
+                                        {
+                                            <a href="@Url.Action("Tarefa", "Painel", new { id = task.id })" id="task"><div style="color: gray; display:inline;">@task.listaUsuarios.FirstOrDefault().nome </div>  - @task.nome - @task.processo.nome - (Inicio: @task.dataInicio - Entrega: @task.dataEntrega)</a>
+                                            <hr />
+                                        }
+                                    </div>
+                                    <button class="btn btn-success btn-group-sm" data-toggle="modal" data-target="#novaTarefa" onclick="getIDFila(@item.id)"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar uma tarefa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="row">
+            <div class="large-12 columns col-lg-1 col-md-1 col-sm-1">
+                <div class="wrapper">
+                    <button class="btn btn-group" data-toggle="modal" data-target="#incluirUsuario">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Adicionar usuarios ao projeto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--Fim Fila de tarefas-->
+<!--Modal Tarefa-->
+<div class="modal fade bd-example-modal-lg" id="novaTarefa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova tarefa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="txtNome" class="col-sm-3 form-control-label"><strong>Descrição Sucinto</strong></label>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" id="txtNome" name="nomeTarefa" class="form-control form-control-success" placeholder="Descrição sucinta da tarefa" required />
+                            @Html.ValidationMessageFor(m => m.NomeTarefa, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        @Html.LabelFor(p => p.ListaUsuarios, new { @class = "col-sm-3 form-control-label" })
+                        @Html.DropDownListFor(p => p.IdUsuario, (IEnumerable<SelectListItem>)ViewBag.listaUsuario, new { @class = "form-control form-control form-control-success", @id = "ddlListaUsuarios", @onchange = "ListaUsuarioChange()" })
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <label for="dtInicio" class="col-sm-3 form-control-label"><strong>Data Inicio</strong></label>
+                        <input type="datetime-local" name="DtInicio" id="dtInicio" class="date-holder form-control form-control-success" />
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <label for="dtFim" class="col-sm-3 form-control-label"><strong>Data Entrega</strong></label>
+                        <input type="datetime-local" name="DtFim" id="dtFim" class="date-holder form-control form-control-success " />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="txtNome" class="col-sm-3 form-control-label"><strong>Descrição</strong></label>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <textarea id="txtDescricao" name="Descricao" class="form-control form-control-success" rows="4" placeholder="Descrição detalhada da tarefa"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 offset-lg-5 offset-md-5">
+                        <button id="btnSalvaTarefa" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+                <input type="hidden" id="hdnIDFila" name="hdnIDFila" value="" />
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim Modal Tarefa-->
+<!--Modal nova fila-->
+<div class="modal fade bd-example-modal-lg" id="novaFila" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova Fila</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AdicionarFila", "Painel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "login-form" }))
+                {
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.fila.Nome, new { @class = "col-sm-3 form-control-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(m => m.fila.Nome, new { @class = "form-control form-control-success", @id = "txtNome", placeholder = "Nome da fila", required = true })
+                            @Html.ValidationMessageFor(m => m.fila.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                        <div class="offset-5">
+                            <button id="btnSalvaFila" class="btn btn-group">Salvar Fila</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim Modal nova fila-->
+<!--Modal Novo Usuário-->
+<div class="modal fade" id="incluirUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">INCLUIR USUARIO AO PROJETO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AdicionarUsuario", "Painel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "login-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-group col-md-8 col-lg-offset-8">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="ddlUsuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Adicionar Usuário
+                                    </button>
+                                    <div class="dropdown-menu col-lg-12">
+                                        @Html.DropDownListFor(m => m.IdUsuario, (MultiSelectList)ViewBag.listaUsers, new { multiple = "multiple", @class = "form-control form-control-success", @id = "ddlListaUsuarios", @onchange = "ListaUsuarioChange()", size = ViewBag.sizeUserList })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger", @id = "form-login" })
+                        <div class="row">
+                            <button type="submit" class="btn btn-group">Salvar</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim Modal Novo Usuário-->
+
+
+
+@section Scripts {
+    <script type="text/javascript" language="javascript">
+
+        $(function () {
+
+
+        });
+
+        function getIDFila(id) {
+            $('#hdnIDFila').val(id);
+        }
+
+        $("#btnSalvaTarefa").click(function () {
+            var NomeTarefa = $("#txtNome").val();
+            var IdUsuario = $("select[id$='ddlListaUsuarios'] option:selected").val();
+            var DataInicio = $("#dtInicio").val();
+            var DataVencimento = $("#dtFim").val();
+            var Descricao = $("#txtDescricao").val();
+            var IdFila = $('#hdnIDFila').val();
+
+            var objetoTarefa = {
+                NomeTarefa: NomeTarefa,
+                IdUsuario: IdUsuario,
+                DataInicio: DataInicio,
+                DataVencimento: DataVencimento,
+                Descricao: Descricao,
+                IdFila: IdFila
+            };
+
+            var url = "/Painel/IncluirTarefa";
+
+            var dataJson = JSON.stringify(objetoTarefa);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: { modelo: dataJson },
+                dataType: 'json',
+                success: function (data) {
+                    location.reload();
+                    event.preventDefault();
+                }
+            });
+
+        });
+    </script>
+}

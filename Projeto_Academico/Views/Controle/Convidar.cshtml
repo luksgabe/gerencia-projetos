@@ -1,0 +1,55 @@
+﻿@using Projeto_Academico.ViewModels
+@model ConvidarViewModel
+
+@{
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.Title = "Painel de Controle";
+    ViewBag.PageTitle = "Convidar Usuario";
+    ViewBag.IconPage = "fa fa-user-circle-o";
+}
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Controle")">Painel de Controle</a></li>
+        <li class="breadcrumb-item active">@ViewBag.PageTitle</li>
+    </div>
+</ul>
+
+<section class="form-invite ">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Convidar colegas</h3>
+                </div>
+                <div class="card-body">
+                    <p>Convide outras pessoas para participar de seus projetos em desenvolvimento</p>
+                    @using (Html.BeginForm("EnviarConvite", "Controle", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Nome, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome", required = true })
+                                @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Endereço de E-mail", required = true })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <input type="submit" value="Enviar" class="btn btn-primary">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

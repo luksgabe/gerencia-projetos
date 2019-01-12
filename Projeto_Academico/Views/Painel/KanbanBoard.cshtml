@@ -1,0 +1,161 @@
+﻿@model Projeto_Academico.ViewModels.ProjetoViewModel
+@{
+    ViewBag.Title = "Gestão de Projetos";
+    Layout = "~/Views/Shared/_KanbanB_Template.cshtml";
+}
+
+<div id="sortableKanbanBoards" style="padding-top: 15px;">
+    <div class="row" style="padding-bottom: 5px;">
+        <a href="@Url.Action("Projeto", "Painel", new { id = ViewBag.idProjeto })"><button class="btn--primary"><i class="fa fa-tasks" aria-hidden="true"></i></button></a>
+        <button class="btn btn-success" data-toggle="modal" data-target="#novo-processo"><i class="fa fa-plus" aria-hidden="true"></i>Adicionar Processo</button>
+    </div>
+    <!--sütun başlangıç-->
+    <div class="row">
+
+        @foreach (var processo in Model.ListaProcessos)
+        {
+            <div class="panel panel-primary kanban-col">
+                <div class="panel-heading">
+                    @processo.nome
+                    <i class="fa fa-2x fa-plus-circle pull-right"></i>
+                </div>
+                <div class="panel-body">
+                    <div id="@processo.id" class="kanban-centered">
+                        @foreach (var tarefa in Model.ListaTarefaProcs(processo.id))
+                        {
+                            <article class="kanban-entry grab" id="@tarefa.id" draggable="true">
+                                <div class="kanban-entry-inner">
+                                    <div class="kanban-label">
+                                        <h2><a href="#">@tarefa.nome</a> <span>postado por @tarefa.listaUsuarios.FirstOrDefault().apelido</span></h2>
+                                        <p>@tarefa.descricao</p>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+                @*<div class="panel-footer">
+                        <a href="#">Add a card...</a>
+                    </div>*@
+            </div>
+        }
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="novo-processo" tabindex="-1" role="dialog" aria-labelledby="novo-processoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="novo-processoLabel"><strong>Novo processo</strong></h4>
+            </div>
+            @using (Html.BeginForm("AdicionarProcesso", "Painel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "login-form" }))
+            {
+                <div class="modal-body">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group row">
+                        @Html.LabelFor(m => m.NovoProcesso.Nome, new { @class = "col-sm-3 form-control-label" })
+                        <div class="col-sm-8">
+                            @Html.TextBoxFor(m => m.NovoProcesso.Nome, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome do processo", required = true })
+                            @Html.ValidationMessageFor(m => m.NovoProcesso.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    @*<button type="submit" class="btn btn-default" onclick='' data-dismiss="modal">Salvar</button>*@
+                    <input type="submit" class="btn btn-default" value="Salvar" />
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="card-task" tabindex="-1" role="dialog" aria-labelledby="novo-processoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="novo-processoLabel">
+                    
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    @Html.TextBoxFor(m => m.tarefa.Nome, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome da Tarefa", required = true })
+                    @Html.TextBoxFor(m => m.tarefa.Descricao, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome da Tarefa", required = true })
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+
+
+
+
+            @*@using (Html.BeginForm("AdicionarProcesso", "Painel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "login-form" }))
+                        {
+                            <div class="modal-body">
+                                @Html.AntiForgeryToken()
+                                <div class="form-group row">
+                                    @Html.LabelFor(m => m.NovoProcesso.Nome, new { @class = "col-sm-3 form-control-label" })
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(m => m.NovoProcesso.Nome, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome do processo", required = true })
+                                        @Html.ValidationMessageFor(m => m.NovoProcesso.Nome, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                @*<button type="submit" class="btn btn-default" onclick='' data-dismiss="modal">Salvar</button>
+                    <input type="submit" class="btn btn-default" value="Salvar" />
+
+                </div>
+                }*@
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript" language="javascript">
+
+        $(function () {
+
+
+        });
+
+        function cardClick(id) {
+        
+            var objetoTarefa = {
+                Id: id,
+                Nome: ""
+            };
+            var Nome = "";
+
+            var url = "/Painel/DadosTarefa";
+
+            var dataJson = JSON.stringify(objetoTarefa);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: { modelo: dataJson },
+                dataType: 'json',
+                success: function (data) {
+                    
+                    $("#txtNomeTarefa").html(data.Nome);
+
+                    location.reload();
+                    event.preventDefault();
+                }
+            });
+            //$.post(url, { objetoTarefa }, function (data) {
+            //    $("#txtNomeTarefa").html(data);
+            //});
+        }
+    </script>
+}

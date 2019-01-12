@@ -1,0 +1,192 @@
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\ApplicationInsights.config
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csc.exe
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Collections.Immutable.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\vbc.exe
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\VBCSCompiler.exe
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\VBCSCompiler.exe.config
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\Projeto_Academico.dll.config
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\Projeto_Academico.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\Projeto_Academico.pdb
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.dll
+c:\users\lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.pdb
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.Cache
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csc.exe.config
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csc.rsp
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csi.exe
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csi.exe.config
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\csi.rsp
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.AppContext.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Console.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.IO.Compression.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Claims.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.ValueTuple.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\vbc.exe.config
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\roslyn\vbc.rsp
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+C:\Users\Lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\FluentValidation.dll
+C:\Users\Lucas\documents\visual studio 2015\Projects\Projeto_Academico\Projeto_Academico\bin\FluentValidation.xml
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._01082017.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto_Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csprojResolveAssemblyReference.cache
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\ApplicationInsights.config
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll.config
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.pdb
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\FluentValidation.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\FluentValidation.xml
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.Cache
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.pdb
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Net.Http.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Algorithms.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Encoding.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Primitives.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.X509Certificates.dll
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._29082017.resources
+E:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\ApplicationInsights.config
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll.config
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.pdb
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\FluentValidation.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\MvcCheckBoxList.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Net.Http.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Algorithms.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Encoding.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Primitives.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\FluentValidation.xml
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._29082017.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.identidadeperfiladd.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addclienteprojeto.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addtableusuariosProjetos.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addproper.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addfilaprocessotarefa.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._61117.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20112017.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addcollumn.resources
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.Cache
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.dll
+D:\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.pdb
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\ApplicationInsights.config
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll.config
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.pdb
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\FluentValidation.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\MvcCheckBoxList.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Net.Http.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Algorithms.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Encoding.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Primitives.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\FluentValidation.xml
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csprojResolveAssemblyReference.cache
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._29082017.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.identidadeperfiladd.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addclienteprojeto.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addtableusuariosProjetos.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addproper.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addfilaprocessotarefa.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._61117.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20112017.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addcollumn.resources
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.Cache
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.dll
+D:\Lucas Gabriel\Meus Projetos\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.pdb
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._29082017.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.identidadeperfiladd.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addclienteprojeto.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addtableusuariosProjetos.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addproper.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addfilaprocessotarefa.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._61117.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20112017.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addcollumn.resources
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.Cache
+C:\Users\Lucas\Documents\Visual Studio 2015\Projects\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.CoreCompileInputs.cache
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.criacaodb070517.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20062017.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._29082017.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.identidadeperfiladd.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addclienteprojeto.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addtableusuariosProjetos.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addproper.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addfilaprocessotarefa.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._61117.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations._20112017.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.Migrations.addcollumn.resources
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.GenerateResource.cache
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.CoreCompileInputs.cache
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\ApplicationInsights.config
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll.config
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\Projeto_Academico.pdb
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\FluentValidation.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\MvcCheckBoxList.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Net.Http.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Algorithms.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Encoding.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.Primitives.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\FluentValidation.xml
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.csproj.CopyComplete
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.dll
+D:\Projects_vs5\Projeto Academico\Projeto_Academico\obj\Debug\Projeto_Academico.pdb

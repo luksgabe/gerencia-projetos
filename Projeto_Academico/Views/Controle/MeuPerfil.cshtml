@@ -1,0 +1,84 @@
+﻿@model Projeto_Academico.ViewModels.UsuariosViewModel
+
+@{
+    ViewBag.Title = "Meu Perfil";
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.PageTitle = "Meu Perfil";
+}
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Controle")">Painel de Controle</a></li>
+        <li class="breadcrumb-item active">@ViewBag.PageTitle</li>
+    </div>
+</ul>
+
+<section class="tables">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Meus dados</h3>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm("AlterarPerfil", "Controle", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", enctype = "multipart/form-data", @class = "form-horizontal" }))
+                    {
+                        <div class="avatar">
+                            <img src="@ViewBag.ImagemPerfil" alt="..." class="img-fluid rounded-circle" width="150px" height="150px">
+                        </div>
+                        @Html.TextBox("file", "", new { type = "file", @value = "Escolha a imagem" })
+                        <hr />
+
+
+                        @Html.HiddenFor(m => m.Id, new { @class = "form-control form-control-success", @id = "hdnID" })
+
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Nome, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Nome", required = true })
+                                @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-success", @id = "txtEmail", placeholder = "E-mail", required = true })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Apelido, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Apelido, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Apelido", required = true })
+                                @Html.ValidationMessageFor(m => m.Apelido, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.Cargo, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.Cargo, new { @class = "form-control form-control-success", @id = "inputHorizontalSuccess", placeholder = "Cargo", required = true })
+                                @Html.ValidationMessageFor(m => m.Cargo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <input type="submit" value="Alterar" class="btn btn-primary">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+            $("#txtEmail").prop("readonly", true);
+        });
+
+
+    </script>
+}

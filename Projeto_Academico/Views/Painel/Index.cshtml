@@ -1,0 +1,217 @@
+﻿@model Projeto_Academico.ViewModels.NovoProjetoViewModel
+@{
+    ViewBag.PageTitle = "Gestão de Projetos";
+    ViewBag.Title = "Gestão de Projetos";
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.IconPage = "fa fa-tachometer";
+
+}
+
+
+
+
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item active">Painel de Projetos</li>
+    </div>
+</ul>
+
+<section id="project-dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="large-12 columns offset-lg-10 offset-md-10">
+                <div class="wrapper">
+                    <a href="#"><div id="mais-projeto" class="btn btn--border btn--primary btn--animated" data-toggle="modal" data-target="#novoProjeto"><i class="icon-padnote"></i> Novo Projeto</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="novoProjeto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!--Novo Cliente-->
+                <div id="novo-cliente">
+                    <div class="title text-center">
+                        <h2>Novo Cliente</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.NomeCliente, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control form-control-success", @id = "txtNomeCliente", placeholder = "Nome do Cliente", required = true })
+                                @Html.ValidationMessageFor(m => m.NomeCliente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(m => m.AreaAtuacao, new { @class = "col-sm-3 form-control-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(m => m.AreaAtuacao, new { @class = "form-control form-control-success", @id = "txtAreaAtuacao", placeholder = "Área de atuação do Cliente", required = true })
+                                @Html.ValidationMessageFor(m => m.AreaAtuacao, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btnSalvarCliente" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+                <!-- Fim Novo Projeto -->
+                <!-- Novo Projeto -->
+                <div id="novo-projeto">
+                    <div class="title text-center">
+                        <h2>Novo Projeto</h2>
+                    </div>
+
+                    <br />
+                    <div class="modal-body">
+                        <div id="cliente-mais">
+                            <a href="#" class="btn btn-group" style="border-radius: 25px;"><i class="fa fa-plus" aria-hidden="true"> Novo Cliente</i></a>
+                        </div>
+                        <br />
+                        @using (Html.BeginForm("NovoProjeto", "Painel", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-group row">
+                                @Html.LabelFor(p => p.listaClientes, new { @class = "col-sm-3 form-control-label" })
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    @Html.DropDownListFor(p => p.IdCliente, (IEnumerable<SelectListItem>)ViewBag.listaCliente, new { @class = "form-control form-control-success", @id = "ddlListaCliente", @onchange = "ListaClienteChange()" })
+                                    @Html.ValidationMessageFor(m => m.listaClientes, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(p => p.NomeProjeto, new { @class = "col-sm-3 form-control-label" })
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    @Html.TextBoxFor(p => p.NomeProjeto, new { @class = "form-control form-control-success", @id = "txtNomeProjeto", placeholder = "Nome do Projeto", required = true })
+                                    @Html.ValidationMessageFor(p => p.NomeProjeto, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label"> Responsável pelo projeto</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    @Html.DropDownListFor(p => p.IdUsuario, (IEnumerable<SelectListItem>)ViewBag.responsavelProjeto, new { @class = "form-control form-control-success", @id = "ddlListaUsuario", @onchange = "ListaUsuarioChange()" })
+                                    @Html.ValidationMessageFor(p => p.listaUsuarios, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @Html.LabelFor(p => p.listaCenarios, new { @class = "col-sm-3 form-control-label" })
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    @Html.DropDownListFor(p => p.IdCenario, (IEnumerable<SelectListItem>)ViewBag.listaCenarios, new { @class = "form-control form-control-success", @id = "ddlListaCenario", @onchange = "ListaCenarioChange()" })
+                                    @Html.ValidationMessageFor(p => p.listaCenarios, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-3">
+                                    <input type="submit" class="btn btn-default" value="Próximo" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <!-- Fim Novo Projeto -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<section class="charts">
+    <div class="container-fluid">
+        <div class="row">
+             Pie Chart 
+            <div class="col-lg-6">
+                <div class="pie-chart-example card">
+                    <div class="card-close">
+                        <div class="dropdown">
+                            <button type="button" id="closeCard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                            @*<div aria-labelledby="closeCard" class="dropdown-menu has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                        </div>
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Pie  Chart Example</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="chart_div"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+
+@section Scripts {
+    <script type="text/javascript" language="javascript">
+
+        $(function () {
+
+            /* Load da página */
+            var clienteExistente = "@ViewBag.Clientes";
+
+            if (clienteExistente == "True") {
+                $("#novo-cliente").hide();
+                $("#novo-projeto").show();
+            } else {
+                $("#novo-cliente").show();
+                $("#novo-projeto").hide();
+            }
+
+            /*Fim  Load da página */
+
+            /* Eventos click */
+            $("#mais-projeto").click(function () {
+
+                clienteExistente = "@ViewBag.Clientes";
+
+                if (clienteExistente == "True") {
+                    $("#novo-cliente").hide();
+                    $("#novo-projeto").show();
+                } else {
+                    $("#novo-cliente").show();
+                    $("#novo-projeto").hide();
+                }
+            });
+
+            $("#cliente-mais").click(function () {
+
+                $("#novo-cliente").show();
+                $("#novo-projeto").hide();
+            });
+
+
+            $("#btnSalvarCliente").click(function () {
+
+                var nome = $("#txtNomeCliente").val();
+                var areaAtuacao = $("#txtAreaAtuacao").val();
+
+                var objetoCliente = {
+                    nome: nome,
+                    areaAtuacao: areaAtuacao
+                };
+                var url = "/Painel/ProjetoSalvarCliente";
+
+                var dataJson = JSON.stringify(objetoCliente);
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: { modelo: dataJson },
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#novo-projeto").show();
+                        $("#novo-cliente").hide();
+                    }
+                });
+            });
+            /*Fim eventos click */
+
+
+        });
+    </script>
+}

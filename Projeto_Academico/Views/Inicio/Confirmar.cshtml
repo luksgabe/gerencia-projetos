@@ -1,0 +1,42 @@
+﻿@model Projeto_Academico.Models.ViewModels.CadastroInicialViewModel
+
+@{
+    Layout = "~/Views/Shared/Inicio_Master.cshtml";
+    ViewBag.Title = "Confirmação de E-mail";
+}
+
+<div class="container auth" onload="OnLoad()">
+    <div id="big-form" class="well auth-box">
+        <h1 class="text-center">
+            Ótimo! Agora clique no botão abaixo
+        </h1>
+        <div class="text-center">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-default">Entrar</a>
+        </div>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-danger" id="errorMessage">
+        <h3>@ViewBag.Message</h3>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript" language="javascript">    
+        $(function () {
+
+            var mensagem = "@ViewBag.Message";
+
+            if (mensagem != null && mensagem != "") {
+                $("#erroMessage").show();
+            }
+            else {
+                $("#erroMessage").hide();
+            }
+
+        });
+    </script>    
+}
+

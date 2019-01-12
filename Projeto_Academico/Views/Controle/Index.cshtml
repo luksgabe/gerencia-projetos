@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Admin_Template.cshtml";
+    ViewBag.Title = "Painel de Controle";
+    ViewBag.PageTitle = "Controle";
+    ViewBag.IconPage = "fa fa-cogs";
+}
+<ul class="breadcrumb">
+    <div class="container-fluid">
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </div>
+</ul>
+<section class="dashboard-counts no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row bg-white has-shadow">
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="item-view">
+                        <a href="@Url.Action("Convidar", "Controle")">
+                            <div class="icon "><i class="fa fa-user-circle-o" style="font-size:45px; color:#000000"></i></div>
+                            <div class="title">
+                                <span>Convidar<br>usuarios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="item-view">
+                        <a href="@Url.Action("Usuarios", "Controle")">
+                            <div class="icon "><i class="fa fa-users" style="font-size:45px; color:#000000"></i></div>
+                            <div class="title">
+                                <span>Controle<br>Usuarios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="item-view">
+                        <a href="@Url.Action("MeuPerfil", "Controle")">
+                            <div class="icon "><i class="fa fa-address-card-o" style="font-size:45px; color:#000000"></i></div>
+                            <div class="title">
+                                <span>Meu<br>Perfil</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
