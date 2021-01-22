@@ -104,8 +104,8 @@ namespace Projeto_Academico.Business
 
             string nomeRemetente = user.nome;
             string emailRemetente = user.email;
-            string emailSMTP = "llucasgabriel@hotmail.com";
-            string senhaSMTP = "Izachi@1994";
+            string emailSMTP = "*******";
+            string senhaSMTP = "*******";
             string destinatario = pDestinatario;
             string smtp = "smtp-mail.outlook.com";
             string assunto = pAssunto;
